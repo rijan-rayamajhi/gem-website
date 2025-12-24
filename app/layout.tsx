@@ -15,7 +15,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Go Extra Mile — Rewarding Every Ride",
   description:
-    "Turn every ride into real rewards. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+    "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+  icons: {
+    icon: "/app_icon.png",
+    apple: "/app_icon.png",
+    shortcut: "/app_icon.png",
+  },
+  openGraph: {
+    title: "Go Extra Mile — Rewarding Every Ride",
+    description:
+      "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+    images: ["/app_icon.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Go Extra Mile — Rewarding Every Ride",
+    description:
+      "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+    images: ["/app_icon.png"],
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="h-full scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-dvh antialiased`}
       >
         {children}
       </body>

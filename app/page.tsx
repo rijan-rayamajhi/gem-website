@@ -1,8 +1,32 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
+import {
+  Apple,
+  Flashy,
+  Gift,
+  GooglePlay,
+  Instagram,
+  Link,
+  Location,
+  MedalStar,
+  Play,
+  TickCircle,
+  Youtube,
+} from "iconsax-reactjs";
+import HeroReel from "./components/HeroReel";
+import ReelVideoCard from "./components/ReelVideoCard";
+
+const testimonialVideos = [
+  { src: "/Video-244.mp4", ariaLabel: "Commute video 1" },
+  { src: "/Video-290.mp4", ariaLabel: "Commute video 2" },
+  { src: "/Video-432.mp4", ariaLabel: "Commute video 3" },
+  { src: "/Video-763.mp4", ariaLabel: "Commute video 4" },
+  { src: "/Video-974.mp4", ariaLabel: "Commute video 5" },
+] as const;
 
 function Container({ children }: { children: ReactNode }) {
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 lg:px-8">{children}</div>
+    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">{children}</div>
   );
 }
 
@@ -37,16 +61,25 @@ function SectionHeading({
 function Card({
   title,
   children,
+  icon,
 }: {
   title: string;
   children: ReactNode;
+  icon?: ReactNode;
 }) {
   return (
     <div className="group relative rounded-2xl border border-black/5 bg-white/80 p-6 shadow-sm backdrop-blur transition dark:border-white/10 dark:bg-white/5">
       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 ring-1 ring-black/5 transition group-hover:opacity-100 dark:ring-white/10" />
-      <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-        {title}
-      </h3>
+      <div className="flex items-center gap-3">
+        {icon ? (
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-black/5 bg-white/70 text-zinc-950 shadow-sm transition group-hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-zinc-50 dark:group-hover:bg-white/10">
+            {icon}
+          </div>
+        ) : null}
+        <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+          {title}
+        </h3>
+      </div>
       <div className="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-300">
         {children}
       </div>
@@ -91,42 +124,6 @@ function SecondaryButton({
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-white to-zinc-50 dark:from-black dark:via-black dark:to-zinc-950">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur dark:border-white/10 dark:bg-black/40">
-        <Container>
-          <div className="flex h-16 items-center justify-between">
-            <a
-              href="#top"
-              className="flex items-center gap-2 font-semibold tracking-tight text-zinc-950 dark:text-zinc-50"
-            >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-sm font-semibold text-white shadow-sm dark:bg-zinc-50 dark:text-zinc-950">
-                GEM
-              </span>
-              <span className="hidden sm:inline">Go Extra Mile</span>
-            </a>
-            <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-600 dark:text-zinc-300 md:flex">
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="#how-it-works">
-                How it works
-              </a>
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="#benefits">
-                Benefits
-              </a>
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="#community">
-                Community
-              </a>
-            </nav>
-            <div className="flex items-center gap-3">
-              <a
-                href="#download"
-                className="hidden rounded-full px-4 py-2 text-sm font-semibold text-zinc-600 transition hover:bg-black/5 hover:text-zinc-950 dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white sm:inline-flex"
-              >
-                Download
-              </a>
-              <PrimaryButton href="#download">Start earning</PrimaryButton>
-            </div>
-          </div>
-        </Container>
-      </header>
-
       <main id="top">
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0 -z-10">
@@ -135,22 +132,24 @@ export default function Home() {
           </div>
 
           <Container>
-            <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-12 lg:items-center">
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/70 px-4 py-2 text-sm font-medium text-zinc-600 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-zinc-300">
-                  India’s first rewards-based mobility app
+            <div className="grid gap-10 pb-14 pt-8 sm:gap-12 sm:pb-20 sm:pt-10 md:grid-cols-12 md:items-center">
+              <div className="md:col-span-7">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/app_icon.png"
+                    alt="Go Extra Mile"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-xl"
+                  />
+                  <p className="text-base font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+                    Go Extra Mile
+                  </p>
                 </div>
 
                 <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-6xl">
-                  Turn Every Ride Into Real Rewards
+                  India&apos;s First Rewards Based Mobility App.
                 </h1>
-                <p className="mt-5 text-pretty text-lg leading-8 text-zinc-600 dark:text-zinc-300 sm:text-xl">
-                  Make your daily commute pay you back.
-                </p>
-                <p className="mt-4 text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  Earn rewards for every kilometer you ride, travel, or commute —
-                  effortlessly and in seconds.
-                </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <PrimaryButton href="#download">Download Now</PrimaryButton>
@@ -158,53 +157,10 @@ export default function Home() {
                     See how it works
                   </SecondaryButton>
                 </div>
-
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-black/5 bg-white/70 px-5 py-4 shadow-sm dark:border-white/10 dark:bg-white/5">
-                    <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
-                      Earn
-                    </p>
-                    <p className="mt-1 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-                      GEM Coins
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-black/5 bg-white/70 px-5 py-4 shadow-sm dark:border-white/10 dark:bg-white/5">
-                    <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
-                      Track
-                    </p>
-                    <p className="mt-1 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-                      Every ride
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-black/5 bg-white/70 px-5 py-4 shadow-sm dark:border-white/10 dark:bg-white/5">
-                    <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
-                      Redeem
-                    </p>
-                    <p className="mt-1 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-                      Real perks
-                    </p>
-                  </div>
-                </div>
               </div>
 
-              <div className="lg:col-span-5">
-                <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
-                  <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
-                    What is Go Extra Mile?
-                  </p>
-                  <p className="mt-3 text-pretty text-lg leading-8 text-zinc-950 dark:text-zinc-50">
-                    Go Extra Mile is India’s first <span className="font-semibold">rewards-based mobility app</span> designed to make every trip count.
-                  </p>
-                  <p className="mt-4 text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                    Whether you’re a daily commuter, biker, traveler, or rideshare driver — Go Extra Mile lets you earn valuable rewards simply by riding.
-                  </p>
-                  <div className="mt-6 rounded-2xl bg-zinc-950 px-5 py-4 text-white shadow-sm dark:bg-zinc-50 dark:text-zinc-950">
-                    <p className="text-sm font-medium opacity-90">In one line</p>
-                    <p className="mt-1 text-base font-semibold">
-                      Rewarding every kilometer you travel.
-                    </p>
-                  </div>
-                </div>
+              <div className="md:col-span-5 md:justify-self-end">
+                <HeroReel />
               </div>
             </div>
           </Container>
@@ -215,21 +171,26 @@ export default function Home() {
             <SectionHeading
               eyebrow="How it works"
               title="Start riding. Start earning."
-              description="Earn rewards for every kilometer you ride, travel, or commute — effortlessly and in seconds."
             />
 
-            <div className="mt-12 grid gap-6 lg:grid-cols-4">
-              <Card title="1. Start a Ride">
-                Tap <span className="font-semibold">Ride & Earn</span> to begin tracking.
+            <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Card
+                title="Click to Start"
+                icon={<Location size={22} variant="Bold" />}
+              >
+                Just click on the <span className="font-semibold">Start Commute</span> button to begin your daily commute.
               </Card>
-              <Card title="2. Complete Your Trip">
-                Finish and save your ride details.
+              <Card
+                title="Earn Rewards"
+                icon={<Gift size={22} variant="Bold" />}
+              >
+                End your commute and instantly earn rewards in seconds.
               </Card>
-              <Card title="3. Earn GEM Coins">
-                Get rewarded for the distance you travel.
-              </Card>
-              <Card title="4. Redeem Rewards">
-                Use GEM Coins for cashback, discounts, coupons, events, and more.
+              <Card
+                title="Build Streak"
+                icon={<Flashy size={22} variant="Bold" />}
+              >
+                Log your daily commute to build your streak.
               </Card>
             </div>
           </Container>
@@ -239,22 +200,24 @@ export default function Home() {
           <Container>
             <SectionHeading
               eyebrow="Why use Go Extra Mile?"
-              title="Premium rewards — built for everyday mobility"
-              description="Everything you need to track rides and unlock meaningful benefits — all in one clean experience."
+              title="Premium rewards built for everyday mobility"
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <Card title="Earn While You Travel">
-                Get rewards for miles you already ride.
+              <Card
+                title="Nothing New"
+                icon={<TickCircle size={22} variant="Bold" />}
+              >
+                Earn rewards for miles you already commute everyday.
               </Card>
-              <Card title="Simple & User-Friendly">
-                Clean interface for quick starts and easy tracking.
+              <Card title="Simple & Easy" icon={<Play size={22} variant="Bold" />}>
+                Just one tap to start commuting and getting rewarded
               </Card>
-              <Card title="Valuable Benefits">
+              <Card title="Valuable Benefits" icon={<MedalStar size={22} variant="Bold" />}>
                 Redeem coins for offers, deals, and exclusive perks.
               </Card>
-              <Card title="Track Your Journey">
-                View past rides and reward history in one place.
+              <Card title="Review Your Journey" icon={<TickCircle size={22} variant="Bold" />}>
+                View past data and reward history in one place
               </Card>
             </div>
           </Container>
@@ -265,25 +228,24 @@ export default function Home() {
             <SectionHeading
               eyebrow="Who it’s for"
               title="Made for anyone who moves"
-              description="This app is perfect for commuters, drivers, and explorers who want more value from everyday miles."
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+              <div className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 sm:p-8">
                 <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
                   Perfect for
                 </h3>
-                <ul className="mt-4 space-y-3 text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  <li>Daily commuters & bikers</li>
-                  <li>Travelers & road explorers</li>
-                  <li>Rideshare drivers & delivery partners</li>
+                <ul className="mt-4 list-disc space-y-3 pl-5 text-base leading-7 text-zinc-600 dark:text-zinc-300">
+                  <li>Daily commuters &amp; bikers</li>
+                  <li>Travelers &amp; road explorers</li>
+                  <li>Rideshare drivers &amp; delivery partners</li>
                   <li>Anyone who wants to get more value from everyday miles</li>
                 </ul>
               </div>
 
-              <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+              <div className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 sm:p-8">
                 <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-                  Mission
+                  Vision
                 </h3>
                 <p className="mt-4 text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300">
                   We believe mobility should be <span className="font-semibold">rewarding and purposeful</span> — not just movement. Our mission is to empower commuters with incentives for every ride they take.
@@ -301,31 +263,36 @@ export default function Home() {
             <SectionHeading
               eyebrow="Join the community"
               title="Follow Go Extra Mile"
-              description="Follow us for updates, reward campaigns, and travel inspiration."
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
-              <Card title="Instagram">
+              <Card title="Instagram" icon={<Instagram size={22} variant="Bold" />}>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/goextramileapp/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
                   aria-label="Instagram"
                 >
                   Follow on Instagram
                 </a>
               </Card>
-              <Card title="WhatsApp">
+              <Card title="LinkedIn" icon={<Link size={22} variant="Bold" />}>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/goextramileapp/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
-                  aria-label="WhatsApp"
+                  aria-label="LinkedIn"
                 >
-                  Join on WhatsApp
+                  Connect on LinkedIn
                 </a>
               </Card>
-              <Card title="YouTube">
+              <Card title="YouTube" icon={<Youtube size={22} variant="Bold" />}>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@GoExtraMileApp"
+                  target="_blank"
+                  rel="noreferrer"
                   className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
                   aria-label="YouTube"
                 >
@@ -339,27 +306,30 @@ export default function Home() {
         <section id="testimonials" className="py-16 sm:py-20">
           <Container>
             <SectionHeading
-              eyebrow="Testimonials"
+              eyebrow="Reels"
               title="Commutes that feel worth it"
-              description="A simple experience that turns everyday rides into rewards."
             />
 
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
-              <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
-                <p className="text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  “I never knew my commute could give me rewards — now every ride feels worth it!”
-                </p>
-                <p className="mt-4 text-sm font-semibold text-zinc-950 dark:text-zinc-50">
-                  Sample user
-                </p>
-              </div>
-              <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
-                <p className="text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  “Clean UI and fast tracking — love the simple experience.”
-                </p>
-                <p className="mt-4 text-sm font-semibold text-zinc-950 dark:text-zinc-50">
-                  Sample user
-                </p>
+            <div className="mt-12 overflow-hidden">
+              <div className="flex w-max gap-6 testimonials-scroll hover:[animation-play-state:paused]">
+                {[...testimonialVideos, ...testimonialVideos].map((video, index) => (
+                  <div
+                    key={`${video.src}-${index}`}
+                    className="group relative w-56 flex-none overflow-hidden rounded-3xl border border-black/5 bg-white/70 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 sm:w-64 md:w-72"
+                  >
+                    <a
+                      href="https://www.instagram.com/goextramileapp/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Open Instagram"
+                      className="absolute bottom-4 left-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/90 text-zinc-950 shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-zinc-50 dark:hover:bg-white/15"
+                    >
+                      <Instagram size={20} variant="Bold" />
+                    </a>
+
+                    <ReelVideoCard src={video.src} ariaLabel={video.ariaLabel} />
+                  </div>
+                ))}
               </div>
             </div>
           </Container>
@@ -367,7 +337,7 @@ export default function Home() {
 
         <section id="download" className="py-16 sm:py-24">
           <Container>
-            <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-zinc-950 px-8 py-14 text-white shadow-sm dark:border-white/10 dark:bg-white/5">
+            <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-zinc-950 px-6 py-12 text-white shadow-sm dark:border-white/10 dark:bg-white/5 sm:px-8 sm:py-14">
               <div className="pointer-events-none absolute inset-0">
                 <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
                 <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
@@ -375,22 +345,28 @@ export default function Home() {
 
               <div className="relative">
                 <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Download now and start earning from your very first ride
+                  Download now and start earning from first day.
                 </h2>
                 <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/80">
-                  Available for iPhone and Android. Start earning rewards from the very first ride!
+                  Available for iPhone and Android.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a
-                    href="#"
-                    className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-zinc-950 shadow-sm transition hover:bg-zinc-100"
+                    href="https://apps.apple.com/in/app/go-extra-mile/id6499072540"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-zinc-950 shadow-sm transition hover:bg-zinc-100"
                   >
+                    <Apple size={18} variant="Bold" />
                     App Store
                   </a>
                   <a
-                    href="#"
-                    className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 bg-transparent px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-white/10"
+                    href="https://play.google.com/store/apps/details?id=com.goeleventhmile&pcampaignid=web_share"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-white/10"
                   >
+                    <GooglePlay size={18} variant="Bold" />
                     Google Play
                   </a>
                 </div>
@@ -407,14 +383,8 @@ export default function Home() {
               Go Extra Mile — Rewarding Every Ride © 2025.
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="#">
-                Terms
-              </a>
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="#">
-                Privacy
-              </a>
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="#">
-                Support
+              <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms-privacy">
+                Terms &amp; Privacy.
               </a>
             </div>
           </div>
