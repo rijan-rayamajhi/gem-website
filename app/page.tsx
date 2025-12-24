@@ -148,8 +148,11 @@ export default function Home() {
                 </div>
 
                 <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-6xl">
-                  India&apos;s First Rewards Based Mobility App.
+                  Built for India&apos;s daily commuters.
                 </h1>
+                <p className="mt-3 max-w-prose text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300 sm:text-lg">
+                  Log your commute. Stay consistent. Unlock rewards over time.
+                </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <PrimaryButton href="#download">Download Now</PrimaryButton>
@@ -170,25 +173,39 @@ export default function Home() {
           <Container>
             <SectionHeading
               eyebrow="How it works"
-              title="Start riding. Start earning."
+              title="Start commuting. Start earning."
             />
 
             <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <Card
                 title="Click to Start"
-                icon={<Location size={22} variant="Bold" />}
+                icon={
+                  <span
+                    className="material-symbols-rounded text-[22px] leading-none"
+                    aria-hidden="true"
+                  >
+                    navigation
+                  </span>
+                }
               >
-                Just click on the <span className="font-semibold">Start Commute</span> button to begin your daily commute.
+                Tap Start Commute to log your daily commute.
               </Card>
               <Card
                 title="Earn Rewards"
                 icon={<Gift size={22} variant="Bold" />}
               >
-                End your commute and instantly earn rewards in seconds.
+                End your commute. Any earned rewards are added automatically.
               </Card>
               <Card
                 title="Build Streak"
-                icon={<Flashy size={22} variant="Bold" />}
+                icon={
+                  <span
+                    className="material-symbols-rounded text-[22px] leading-none"
+                    aria-hidden="true"
+                  >
+                    mode_heat
+                  </span>
+                }
               >
                 Log your daily commute to build your streak.
               </Card>
