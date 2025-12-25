@@ -2,12 +2,10 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import {
   Apple,
-  Flashy,
   Gift,
   GooglePlay,
   Instagram,
   Link,
-  Location,
   MedalStar,
   Play,
   TickCircle,
@@ -151,7 +149,7 @@ export default function Home() {
                   Built for India&apos;s daily commuters.
                 </h1>
                 <p className="mt-3 max-w-prose text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300 sm:text-lg">
-                  Log your commute. Stay consistent. Unlock rewards over time.
+                  Log your daily bike or car commute. Build consistency. Unlock benefits over time.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -173,12 +171,12 @@ export default function Home() {
           <Container>
             <SectionHeading
               eyebrow="How it works"
-              title="Start commuting. Start earning."
+              title="Simple. Daily. Effortless."
             />
 
             <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <Card
-                title="Click to Start"
+                title="Start Commute"
                 icon={
                   <span
                     className="material-symbols-rounded text-[22px] leading-none"
@@ -188,13 +186,13 @@ export default function Home() {
                   </span>
                 }
               >
-                Tap Start Commute to log your daily commute.
+                Tap once to start logging your daily commute.
               </Card>
               <Card
-                title="Earn Rewards"
+                title="Complete Commute"
                 icon={<Gift size={22} variant="Bold" />}
               >
-                End your commute. Any earned rewards are added automatically.
+                End your commute when you arrive. Distance and time are recorded automatically.
               </Card>
               <Card
                 title="Build Streak"
@@ -207,7 +205,7 @@ export default function Home() {
                   </span>
                 }
               >
-                Log your daily commute to build your streak.
+                Log your commute daily to build a streak. Consistency unlocks benefits over time.
               </Card>
             </div>
           </Container>
@@ -217,24 +215,24 @@ export default function Home() {
           <Container>
             <SectionHeading
               eyebrow="Why use Go Extra Mile?"
-              title="Premium rewards built for everyday mobility"
+              title="Designed for daily commuters."
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               <Card
-                title="Nothing New"
+                title="Daily Routine"
                 icon={<TickCircle size={22} variant="Bold" />}
               >
-                Earn rewards for miles you already commute everyday.
+                Log the commute you already do every day. No extra effort. No lifestyle change.
               </Card>
-              <Card title="Simple & Easy" icon={<Play size={22} variant="Bold" />}>
-                Just one tap to start commuting and getting rewarded
+              <Card title="One-Tap Logging" icon={<Play size={22} variant="Bold" />}>
+                Start and end your commute in seconds.
               </Card>
-              <Card title="Valuable Benefits" icon={<MedalStar size={22} variant="Bold" />}>
-                Redeem coins for offers, deals, and exclusive perks.
+              <Card title="Build Consistency" icon={<MedalStar size={22} variant="Bold" />}>
+               Daily commutes help you build long-term streaks.
               </Card>
-              <Card title="Review Your Journey" icon={<TickCircle size={22} variant="Bold" />}>
-                View past data and reward history in one place
+              <Card title="Real benefits" icon={<TickCircle size={22} variant="Bold" />}>
+                Use earned GEM coins for fuel, services, and partner offers.
               </Card>
             </div>
           </Container>
@@ -244,7 +242,7 @@ export default function Home() {
           <Container>
             <SectionHeading
               eyebrow="Who it’s for"
-              title="Made for anyone who moves"
+              title="Made for people who commute every day"
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -252,20 +250,26 @@ export default function Home() {
                 <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
                   Perfect for
                 </h3>
-                <ul className="mt-4 list-disc space-y-3 pl-5 text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  <li>Daily commuters &amp; bikers</li>
-                  <li>Travelers &amp; road explorers</li>
-                  <li>Rideshare drivers &amp; delivery partners</li>
-                  <li>Anyone who wants to get more value from everyday miles</li>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-7 text-zinc-600 dark:text-zinc-300">
+                  <li>College students</li>
+                  <li>Office commuters</li>
+                  <li>Bike and car owners</li>
+                  <li>Delivery &amp; field professionals</li>
+                  <li>Anyone who commutes regularly</li>
                 </ul>
+                <p className="mt-4 text-pretty">If you commute occasionally, it still works.</p> 
+                <p>If you commute daily, it fits naturally into your life.</p>
               </div>
 
               <div className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 sm:p-8">
                 <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-                  Vision
+                  Our vision
                 </h3>
                 <p className="mt-4 text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300">
-                  We believe mobility should be <span className="font-semibold">rewarding and purposeful</span> — not just movement. Our mission is to empower commuters with incentives for every ride they take.
+                  Daily commuting is already part of life. It takes time, effort, and consistency. We believe that showing up every day matters and that everyday effort deserves recognition.
+                </p>
+                <p className="mt-4 text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300">
+                  Go Extra Mile exists to make daily commuting feel worth it. Because consistency deserves more than silence.
                 </p>
                 <div className="mt-6">
                   <SecondaryButton href="#download">Get started today</SecondaryButton>
@@ -275,55 +279,11 @@ export default function Home() {
           </Container>
         </section>
 
-        <section id="community" className="py-16 sm:py-20">
-          <Container>
-            <SectionHeading
-              eyebrow="Join the community"
-              title="Follow Go Extra Mile"
-            />
-
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              <Card title="Instagram" icon={<Instagram size={22} variant="Bold" />}>
-                <a
-                  href="https://www.instagram.com/goextramileapp/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
-                  aria-label="Instagram"
-                >
-                  Follow on Instagram
-                </a>
-              </Card>
-              <Card title="LinkedIn" icon={<Link size={22} variant="Bold" />}>
-                <a
-                  href="https://www.linkedin.com/company/goextramileapp/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
-                  aria-label="LinkedIn"
-                >
-                  Connect on LinkedIn
-                </a>
-              </Card>
-              <Card title="YouTube" icon={<Youtube size={22} variant="Bold" />}>
-                <a
-                  href="https://www.youtube.com/@GoExtraMileApp"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
-                  aria-label="YouTube"
-                >
-                  Subscribe on YouTube
-                </a>
-              </Card>
-            </div>
-          </Container>
-        </section>
 
         <section id="testimonials" className="py-16 sm:py-20">
           <Container>
             <SectionHeading
-              eyebrow="Reels"
+              eyebrow="Community"
               title="Commutes that feel worth it"
             />
 
@@ -352,6 +312,62 @@ export default function Home() {
           </Container>
         </section>
 
+
+
+        <section id="community" className="py-16 sm:py-20">
+          <Container>
+            <SectionHeading
+              eyebrow="Join India&apos;s commuter community"
+              title="Follow Go Extra Mile"
+            />
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+             
+             
+              <Card title="Instagram" icon={<Instagram size={22} variant="Bold" />}>
+                <a
+                  href="https://www.instagram.com/goextramileapp/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
+                  aria-label="Instagram"
+                >
+                  Follow on Instagram
+                </a>
+              </Card>
+              
+              <Card title="YouTube" icon={<Youtube size={22} variant="Bold" />}>
+                <a
+                  href="https://www.youtube.com/@GoExtraMileApp"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
+                  aria-label="YouTube"
+                >
+                  Subscribe on YouTube
+                </a>
+              </Card>
+            
+              <Card title="LinkedIn" icon={<Link size={22} variant="Bold" />}>
+                <a
+                  href="https://www.linkedin.com/company/goextramileapp/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
+                  aria-label="LinkedIn"
+                >
+                  Connect on LinkedIn
+                </a>
+              </Card>
+              
+            
+            
+            </div>
+          </Container>
+        </section>
+
+
+
         <section id="download" className="py-16 sm:py-24">
           <Container>
             <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-zinc-950 px-6 py-12 text-white shadow-sm dark:border-white/10 dark:bg-white/5 sm:px-8 sm:py-14">
@@ -362,10 +378,10 @@ export default function Home() {
 
               <div className="relative">
                 <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Download now and start earning from first day.
+                  Download Go Extra Mile.
                 </h2>
                 <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/80">
-                  Available for iPhone and Android.
+                 Available on Android and iOS.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a
@@ -397,11 +413,11 @@ export default function Home() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-zinc-600 dark:text-zinc-300">
-              Go Extra Mile — Rewarding Every Ride © 2025.
+              Go Extra Mile — Rewarding Every Commute © 2025.
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
               <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms-privacy">
-                Terms &amp; Privacy.
+                Terms &amp; Privacy
               </a>
             </div>
           </div>
