@@ -464,11 +464,14 @@ export default function Home() {
               Go Extra Mile - Log every commute © 2025.
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="/about">
-                About
+              <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms">
+                Terms &amp; Conditions
               </a>
-              <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms-privacy">
-                Terms &amp; Privacy
+              <a className="hover:text-zinc-950 dark:hover:text-white" href="/privacy">
+                Privacy Policy
+              </a>
+              <a className="hover:text-zinc-950 dark:hover:text-white" href="/about">
+                About Go Extra Mile
               </a>
             </div>
           </div>
