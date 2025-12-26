@@ -12,12 +12,70 @@ export default function ReelVideoCard({
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
     video.muted = muted;
   }, [muted]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsActive(Boolean(entry?.isIntersecting));
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!isActive || document.visibilityState !== "visible") {
+      video.pause();
+      return;
+    }
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        // Ignore autoplay blocks.
+      });
+    }
+  }, [isActive]);
+
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      if (document.visibilityState !== "visible") {
+        video.pause();
+        return;
+      }
+
+      if (isActive) {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {
+            // Ignore autoplay blocks.
+          });
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", onVisibilityChange);
+  }, [isActive]);
 
   const toggleMute = useCallback(() => {
     setMuted((prev) => !prev);
@@ -39,11 +97,12 @@ export default function ReelVideoCard({
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
         src={src}
-        autoPlay
+        poster="/app_icon.png"
         muted
         playsInline
         loop
-        preload="metadata"
+        preload="none"
+        controls={false}
         aria-label={ariaLabel}
       />
 

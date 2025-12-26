@@ -64,5 +64,12 @@ video {
 }
 
 .testimonials-scroll {
-  animation: testimonials-scroll 30s linear infinite;
+  animation: testimonials-scroll 90s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-scroll {
+    animation: none;
+    transform: none;
+  }
 }

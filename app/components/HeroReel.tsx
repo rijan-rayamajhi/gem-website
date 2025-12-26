@@ -11,7 +11,7 @@ function prefersReducedMotion() {
 export default function HeroReel({
   src = "/hero.mp4",
   title = "Go Extra Mile",
-  caption = "Rewarding every kilometer you travel.",
+  caption = "Log commute. Build consistency. Unlock benefits.",
 }: {
   src?: string;
   title?: string;
@@ -109,11 +109,10 @@ export default function HeroReel({
             }`}
             src={src}
             poster="/app_icon.png"
-            autoPlay
             muted
             playsInline
             loop
-            preload="metadata"
+            preload="none"
             onLoadedData={() => setIsLoaded(true)}
             onError={() => setIsLoaded(false)}
             aria-label="Hero preview video"

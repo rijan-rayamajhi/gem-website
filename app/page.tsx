@@ -5,14 +5,25 @@ import {
   Gift,
   GooglePlay,
   Instagram,
-  Link,
-  MedalStar,
-  Play,
-  TickCircle,
   Youtube,
 } from "iconsax-reactjs";
 import HeroReel from "./components/HeroReel";
 import ReelVideoCard from "./components/ReelVideoCard";
+
+function LinkedInIcon({ size = 22 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.367-1.85 3.6 0 4.264 2.37 4.264 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
 
 const testimonialVideos = [
   { src: "/Video-244.mp4", ariaLabel: "Commute video 1" },
@@ -171,7 +182,7 @@ export default function Home() {
           <Container>
             <SectionHeading
               eyebrow="How it works"
-              title="Simple. Daily. Effortless."
+              title="Simple. Easy. Effortless."
             />
 
             <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -221,17 +232,54 @@ export default function Home() {
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               <Card
                 title="Daily Routine"
-                icon={<TickCircle size={22} variant="Bold" />}
+                icon={
+                  <span
+                    className="material-symbols-rounded text-[22px] leading-none"
+                    aria-hidden="true"
+                  >
+                    calendar_today
+                  </span>
+                }
               >
                 Log the commute you already do every day. No extra effort. No lifestyle change.
               </Card>
-              <Card title="One-Tap Logging" icon={<Play size={22} variant="Bold" />}>
+              <Card
+                title="One-Tap Logging"
+                icon={
+                  <span
+                    className="material-symbols-rounded text-[22px] leading-none"
+                    aria-hidden="true"
+                  >
+                    touch_app
+                  </span>
+                }
+              >
                 Start and end your commute in seconds.
               </Card>
-              <Card title="Build Consistency" icon={<MedalStar size={22} variant="Bold" />}>
-               Daily commutes help you build long-term streaks.
+              <Card
+                title="Build Consistency"
+                icon={
+                  <span
+                    className="material-symbols-rounded text-[22px] leading-none"
+                    aria-hidden="true"
+                  >
+                    trending_up
+                  </span>
+                }
+              >
+                Daily commutes help you build long-term streaks.
               </Card>
-              <Card title="Real benefits" icon={<TickCircle size={22} variant="Bold" />}>
+              <Card
+                title="Real benefits"
+                icon={
+                  <span
+                    className="material-symbols-rounded text-[22px] leading-none"
+                    aria-hidden="true"
+                  >
+                    redeem
+                  </span>
+                }
+              >
                 Use earned GEM coins for fuel, services, and partner offers.
               </Card>
             </div>
@@ -348,7 +396,7 @@ export default function Home() {
                 </a>
               </Card>
             
-              <Card title="LinkedIn" icon={<Link size={22} variant="Bold" />}>
+              <Card title="LinkedIn" icon={<LinkedInIcon size={22} />}>
                 <a
                   href="https://www.linkedin.com/company/goextramileapp/"
                   target="_blank"
@@ -378,10 +426,10 @@ export default function Home() {
 
               <div className="relative">
                 <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Download Go Extra Mile.
+                  Download Go Extra Mile
                 </h2>
                 <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-white/80">
-                 Available on Android and iOS.
+                  Available on Android and iOS
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <a
@@ -413,9 +461,12 @@ export default function Home() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-zinc-600 dark:text-zinc-300">
-              Go Extra Mile — Rewarding Every Commute © 2025.
+              Go Extra Mile - Log every commute © 2025.
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
+              <a className="hover:text-zinc-950 dark:hover:text-white" href="/about">
+                About
+              </a>
               <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms-privacy">
                 Terms &amp; Privacy
               </a>
