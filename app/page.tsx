@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import {
   Apple,
-  Gift,
   GooglePlay,
   Instagram,
   Youtube,
@@ -201,7 +200,16 @@ export default function Home() {
               </Card>
               <Card
                 title="Complete Commute"
-                icon={<Gift size={22} variant="Bold" />}
+                icon={
+                  <Image
+                    src="/commute.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={22}
+                    height={22}
+                    className="invert dark:invert-0"
+                  />
+                }
               >
                 End your commute when you arrive. Distance and time are recorded automatically.
               </Card>
@@ -471,7 +479,7 @@ export default function Home() {
                 Privacy Policy
               </a>
               <a className="hover:text-zinc-950 dark:hover:text-white" href="/about">
-                About Go Extra Mile
+                About
               </a>
             </div>
           </div>

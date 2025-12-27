@@ -2,7 +2,7 @@ export default function TermsPage() {
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-16 lg:px-8">
       <h1 className="text-balance text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-        📜 TERMS &amp; CONDITIONS
+        TERMS &amp; CONDITIONS
       </h1>
 
       <p className="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-300">
@@ -229,7 +229,7 @@ export default function TermsPage() {
         16. Contact
       </h2>
       <p className="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-300">
-        📧{" "}
+        {" "}
         <a
           className="font-semibold text-zinc-950 underline underline-offset-4 hover:opacity-80 dark:text-zinc-50"
           href="mailto:support@goextramile.in"

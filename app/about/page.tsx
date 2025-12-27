@@ -2,13 +2,13 @@ export default function AboutPage() {
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-16 lg:px-8">
       <h1 className="text-balance text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-        About Go Extra Mile
+        About
       </h1>
 
       <p className="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-300">
         Go Extra Mile is built for India’s daily commuters. Every day, millions of people
         ride or drive to work, college, or their daily responsibilities. This commute
-        takes time, effort, and consistency — yet it often goes unnoticed.
+        takes time, effort, and consistency - yet it often goes unnoticed.
       </p>
 
       <p className="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-300">
