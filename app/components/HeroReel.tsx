@@ -11,7 +11,7 @@ function prefersReducedMotion() {
 export default function HeroReel({
   src = "/hero.mp4",
   title = "Go Extra Mile",
-  caption = "Log commute. Build consistency. Unlock benefits.",
+  caption = "Log your daily bike or car commute, build consistency, and unlock benefits over time.",
 }: {
   src?: string;
   title?: string;

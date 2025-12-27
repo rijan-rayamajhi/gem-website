@@ -13,25 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Go Extra Mile - Log every commute",
+  title: "Go Extra Mile – Built for India's Daily Commuters",
   description:
-    "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+    "Log your daily bike or car commute, build consistency, and unlock benefits over time. Go Extra Mile is built for India’s everyday commuters.",
   icons: {
     icon: "/app_icon.png",
     apple: "/app_icon.png",
     shortcut: "/app_icon.png",
   },
   openGraph: {
-    title: "Go Extra Mile - Log every commute",
+    title: "Go Extra Mile – Built for India's Daily Commuters",
     description:
-      "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+      "Log your daily bike or car commute, build consistency, and unlock benefits over time. Go Extra Mile is built for India’s everyday commuters.",
     images: ["/app_icon.png"],
   },
   twitter: {
     card: "summary",
-    title: "Go Extra Mile - Log every commute",
+    title: "Go Extra Mile – Built for India's Daily Commuters",
     description:
-      "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
+      "Log your daily bike or car commute, build consistency, and unlock benefits over time. Go Extra Mile is built for India’s everyday commuters.",
     images: ["/app_icon.png"],
   },
 };

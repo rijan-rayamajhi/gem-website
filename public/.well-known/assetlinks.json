@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.goeleventhmile",
+      "sha256_cert_fingerprints": [
+        "4B:12:FD:1C:5A:52:AB:A4:D7:16:62:76:17:24:A0:7E:99:F0:E8:F6:98:2C:AA:E8:A5:7A:31:31:C4:0B:16:8B"
+      ]
+    }
+  }
+]

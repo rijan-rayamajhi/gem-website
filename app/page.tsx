@@ -156,10 +156,10 @@ export default function Home() {
                 </div>
 
                 <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 sm:text-6xl">
-                  Built for India&apos;s daily commuters.
+                  Built for India&apos;s Daily Commuters
                 </h1>
                 <p className="mt-3 max-w-prose text-pretty text-base leading-7 text-zinc-600 dark:text-zinc-300 sm:text-lg">
-                  Log your daily bike or car commute. Build consistency. Unlock benefits over time.
+                  Log your daily bike or car commute, build consistency, and unlock benefits over time. Go Extra Mile is built for India’s everyday commuters.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -469,11 +469,11 @@ export default function Home() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-zinc-600 dark:text-zinc-300">
-              2025 © Go Extra Mile - Log every commute
+              2025 &copy; Go Extra Mile – Built for India&apos;s Daily Commuters
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
               <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms">
-                Terms &amp; Conditions
+                Terms
               </a>
               <a className="hover:text-zinc-950 dark:hover:text-white" href="/privacy">
                 Privacy Policy
