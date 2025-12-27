@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Go Extra Mile — Rewarding Every Ride",
+  title: "Log every commute",
   description:
     "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
   icons: {
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     shortcut: "/app_icon.png",
   },
   openGraph: {
-    title: "Go Extra Mile — Rewarding Every Ride",
+    title: "Log every commute",
     description:
       "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
     images: ["/app_icon.png"],
   },
   twitter: {
     card: "summary",
-    title: "Go Extra Mile — Rewarding Every Ride",
+    title: "Log every commute",
     description:
       "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
     images: ["/app_icon.png"],
@@ -44,6 +44,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full scroll-smooth">
       <head>
+        <link rel="icon" href="/app_icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/app_icon.png" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"

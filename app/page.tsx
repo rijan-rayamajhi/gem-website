@@ -469,7 +469,7 @@ export default function Home() {
         <Container>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-zinc-600 dark:text-zinc-300">
-              Go Extra Mile - Log every commute © 2025.
+              2025 © Go Extra Mile - Log every commute
             </p>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-zinc-600 dark:text-zinc-300">
               <a className="hover:text-zinc-950 dark:hover:text-white" href="/terms">
