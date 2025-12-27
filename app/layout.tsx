@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Log every commute",
+  title: "Go Extra Mile - Log every commute",
   description:
     "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
   icons: {
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     shortcut: "/app_icon.png",
   },
   openGraph: {
-    title: "Log every commute",
+    title: "Go Extra Mile - Log every commute",
     description:
       "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
     images: ["/app_icon.png"],
   },
   twitter: {
     card: "summary",
-    title: "Log every commute",
+    title: "Go Extra Mile - Log every commute",
     description:
       "India's First Rewards Based Mobility App. Earn GEM Coins for every kilometer you travel and redeem them for cashback, discounts, coupons, events, and more.",
     images: ["/app_icon.png"],

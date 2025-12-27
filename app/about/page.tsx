@@ -27,7 +27,7 @@ export default function AboutPage() {
       <p className="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-300">
         Go Extra Mile is operated by Go Eleventh Mile Technologies Pvt. Ltd., with a
         long-term vision to build a trusted platform for vehicle owners and daily
-        commuters across India. Because showing up every day matters — and everyday
+        commuters across India. Because showing up every day matters - and everyday
         effort deserves recognition.
       </p>
     </main>
